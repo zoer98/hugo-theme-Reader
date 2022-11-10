@@ -1,57 +1,58 @@
+[English document](./README.md) | [中文文档](./README_zh.md)
 
 <p align="center">
   <a href="https://github.com/zburu/hugo-theme-Reader/">
     <img src="images/logo.png" alt="Logo" width="300">
   </a>
   <p align="center">
-   一款简单的、易于阅读的 hugo 主题，集成了多种功能。
+  A simple, easy-to-read hugo theme with multiple features integrated.
     <br />
-    <a href="https://github.com/zburu/hugo-theme-Reader"><strong>探索本项目的文档 »</strong></a>
+    <a href="https://github.com/zburu/hugo-theme-Reader"><strong>Explore the documentation for this project »</strong></a>
     <br />
     <br />
-    <a href="https://hugo-theme-reader.vercel.app/" target="_blank">查看Demo</a>
+    <a href="https://hugo-theme-reader.vercel.app/" target="_blank">View Demo</a>
     ·
-    <a href="https://github.com/zburu/hugo-theme-Reader/issues">报告Bug</a>
+    <a href="https://github.com/zburu/hugo-theme-Reader/issues">report bugs</a>
     ·
-    <a href="https://github.com/zburu/hugo-theme-Reader/issues">提出新特性</a>
+    <a href="https://github.com/zburu/hugo-theme-Reader/issues">propose new features</a>
   </p>
 
 </p>
 
 ![hugo-theme-Reader](https://count.zburu.com/get/?name=hugo-theme-Reader)
 
-本篇 README.md 面向主题使用者和开发者，欢迎使用和提交 pr.
+This README.md is for theme users and developers, welcome to use and submit pr.
 
->本主题是在 [yinyang](https://github.com/joway/hugo-theme-yinyang) 的基础上进行二次开发，增加了新的功能以及删除多余的功能，目的是精简代码，提高网页可读性等。
+> This theme is secondary development based on [yinyang](https://github.com/joway/hugo-theme-yinyang), adding new functions and deleting redundant functions, in order to simplify the code and improve Web page readability, etc.
 
 ![](https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg)
  
-## 目录
+## Table of contents
 
-- [目录](#目录)
-  - [上手指南](#上手指南)
-  - [文件目录说明](#文件目录说明)
-  - [配置](#配置)
-  - [贡献者](#贡献者)
-    - [如何参与本项目](#如何参与本项目)
-  - [作者](#作者)
-  - [版权说明](#版权说明)
-  - [参考](#参考)
+- [Table of contents](#table-of-contents)
+  - [Getting started guide](#getting-started-guide)
+  - [file directory description](#file-directory-description)
+  - [configure](#configure)
+  - [Contributor](#contributor)
+    - [How to participate in this project](#how-to-participate-in-this-project)
+  - [author](#author)
+  - [Copyright statement](#copyright-statement)
+  - [refer to](#refer-to)
 
-### 上手指南
+### Getting started guide
 
 ```shell
 git clone git@github.com:zburu/hugo-theme-Reader.git themes/Reader
 ```
 
-修改 `config.toml`:
+Revise `config.toml`:
 
 ```
 theme = "Reader"
 ```
 
 
-### 文件目录说明
+### file directory description
 eg:
 
 ```shell
@@ -72,12 +73,12 @@ eg:
     \---search
 ```
 
-### 配置 
+### configure 
 
 ```toml
 baseURL = "https://zburu.com"
 languageCode = "en-us"
-title = "子舒的博客"
+title = "zburu's blog"
 theme = "Reader"
 paginate = 15
 
@@ -85,63 +86,63 @@ paginate = 15
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  title = "子舒的博客"
-  Description = "七碗受至味，一壶得真趣，空持百千偈，不如吃茶去。"
+  title = "zburu's blog"
+  Description = ""
   favicon = "https://cdn.zburu.com/favicon.ico"
   buildDate = "2020-06-14"
-  beian = "浙ICP备2022002453号-2"
+  beian = ""
 
 [author]
-  name = "子舒"
+  name = "zburu"
   homepage = "/"
 
 [permalinks]
   posts = "/archives/:slug.html"
 
 [[params.socials]]
-name = "归档"
+name = "posts"
 link = "/posts"
 
 [[params.socials]]
-name = "留言"
+name = "message"
 link = "/message"
 
 [[params.socials]]
-name = "关于"
+name = "about"
 link = "/about"
 
 [[params.socials]]
-name = "搜索"
+name = "search"
 link = "/search"
 
 [[params.socials]]
-name = "实验室"
+name = "lab"
 link = "/lab"
 ```
 
 
-### 贡献者
+### Contributor
 
-请阅读**CONTRIBUTING.md** 查阅为该项目做出贡献的开发者。
+Please read **CONTRIBUTING.md** to see the developers who contributed to the project.
 
-#### 如何参与本项目
+#### How to participate in this project
 
-贡献使开源社区成为一个学习、激励和创造的绝佳场所。你所作的任何贡献都是**非常感谢**的。
+Contributing makes the open source community a great place to learn, inspire, and create. Any contribution you make is **very appreciated**.
 
-fork 仓库，本地开发完成提交仓库，在提交 pr 时注明修改的功能等，保证在没有 bug 的前提下提交，我会进行 review code.
+Fork the warehouse, submit the warehouse after local development, indicate the modified function when submitting the pr, and ensure that it is submitted without bugs, and I will review the code.
 
 
-### 作者
+### author
 
-子舒（shuxhan@163.com）
+zburu（shuxhan@163.com）
 
- *您也可以在贡献者名单中参看所有参与该项目的开发者。*
+*You can also see all the developers participating in the project in the Contributor list. *
 
-### 版权说明
+### Copyright statement
 
-该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/zburu/hugo-theme-Reader/blob/main/LICENSE)
+The project is signed under the MIT License, see [LICENSE](https://github.com/zburu/hugo-theme-Reader/blob/main/LICENSE)
 
-### 参考
+### refer to
 
 - [https://github.com/joway/hugo-theme-yinyang](https://github.com/joway/hugo-theme-yinyang)
 
