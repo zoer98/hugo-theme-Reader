@@ -1,10 +1,8 @@
 
 <p align="center">
   <a href="https://github.com/zburu/hugo-theme-Reader/">
-    <img src="images/logo.png" alt="Logo" width="200">
+    <img src="images/logo.png" alt="Logo" width="300">
   </a>
-
-  <h3 align="center">hugo-theme-Reader</h3>
   <p align="center">
    一款简单的、易于阅读的 hugo 主题，集成了多种功能。
     <br />
