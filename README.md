@@ -11,7 +11,7 @@
     <a href="https://github.com/zburu/hugo-theme-Reader"><strong>探索本项目的文档 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/zburu/hugo-theme-Reader" target="_blank">查看Demo</a>
+    <a href="https://hugo-theme-reader.vercel.app/" target="_blank">查看Demo</a>
     ·
     <a href="https://github.com/zburu/hugo-theme-Reader/issues">报告Bug</a>
     ·
@@ -25,6 +25,8 @@
 本篇 README.md 面向主题使用者和开发者，欢迎使用和提交 pr.
 
 >本主题是在 [yinyang](https://github.com/joway/hugo-theme-yinyang) 的基础上进行二次开发，增加了新的功能以及删除多余的功能，目的是精简代码，提高网页可读性等。
+
+![](https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg)
  
 ## 目录
 
