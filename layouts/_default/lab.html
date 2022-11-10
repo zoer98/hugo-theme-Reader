@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="post {{ .Site.Language.LanguageName }}" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          {{ partial "header.html" . }}
+        </div>
+        <div class="post-box">
+          <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{ if in .Site.Params.mainSections .Type }}
+            <div class="row post-desc">
+              <div class="col-xs-6">
+                {{ if .Date }}
+                <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+                  {{ .Date.Format "02 Jan 2006" }}
+                </time>
+                {{ end }}
+              </div>
+              <div class="col-xs-6">
+                {{ if .Site.Author.name }}
+                <div class="post-author">
+                  <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </header>
+
+          <style>
+            .lab-list {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+            }
+
+            .lab-list .item {
+              width: 49%;
+              margin-bottom: 20px;
+            }
+
+            .lab-list .item a {
+              display: inline-flex;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              padding: 10px;
+              box-sizing: border-box;
+              box-shadow: 1px 2px 10px rgba(0, 0, 0, .1);
+              overflow: hidden;
+              border-radius: 6px;
+              transition: all 0.1s linear;
+              text-decoration: none;
+            }
+
+            .lab-list .item a:hover {
+              box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
+            }
+
+            .lab-list img {
+              margin: 0;
+              padding: 0;
+              box-shadow: none;
+              width: 100%;
+            }
+
+            .lab-list .icon {
+              width: 50px;
+            }
+
+            .lab-list .info {
+              flex: 1;
+              padding-left: 15px;
+            }
+
+            .lab-list span {
+              font-size: 18px;
+              color: #000;
+            }
+
+            .lab-list p {
+              margin: 0;
+              padding-top: 6px;
+              color: #777;
+              font-size: 15px;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 2;
+              overflow: hidden;
+            }
+
+            @media (max-width: 600px) {
+              .lab-list .item {
+                width: 100%;
+              }
+            }
+          </style>
+
+          <div class="post-content markdown-body">
+            {{ .Site.Params.postHeaderContent | safeHTML }}
+            {{ .Content }}
+            <div class="lab-list"></div>
+          </div>
+
+        
+
+        </div>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "scripts.html" . }}
+  <script>
+    function picShow() {
+      var str = '';
+      $.ajax({
+        url: '/lab.json',
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+          $.each(data, function (i, item) {
+            list = "<div class='item'>"
+              + "<a target='_blank' href='" + item.url + "'>"
+              + "<div class='icon'><img src='" + item.icon + "'></div>"
+              + "<div class='info'>"
+              + " <span>" + item.name + "</span>"
+              + " <p>" + item.des + "</p>"
+              + "</div>"
+              + "</a>"
+              + "</div>"
+
+            str += list;
+          }),
+            $(".lab-list").html(str);
+
+        },
+        error: function () {
+          console.log('error')
+        }
+      })
+    }
+    picShow();
+  </script>
+  {{ if .Site.Params.extraBody }}
+  {{ .Site.Params.extraBody | safeHTML }}
+  {{ end }}
+
+</body>
+
+</html>

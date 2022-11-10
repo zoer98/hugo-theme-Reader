@@ -1,0 +1,46 @@
+baseURL = "https://zburu.com"
+languageCode = "en-us"
+title = "子舒的博客"
+theme = "Reader"
+paginate = 15
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  title = "子舒的博客"
+  Description = "七碗受至味，一壶得真趣，空持百千偈，不如吃茶去。"
+  favicon = "https://cdn.zburu.com/favicon.ico"
+  buildDate = "2020-06-14"
+  beian = "浙ICP备2022002453号-2"
+
+[author]
+  name = "子舒"
+  homepage = "/"
+
+[permalinks]
+  posts = "/archives/:slug.html"
+
+[[params.socials]]
+name = "归档"
+link = "/posts"
+
+[[params.socials]]
+name = "周刊"
+link = "/weekly"
+
+[[params.socials]]
+name = "留言"
+link = "/message"
+
+[[params.socials]]
+name = "关于"
+link = "/about"
+
+[[params.socials]]
+name = "搜索"
+link = "/search"
+
+[[params.socials]]
+name = "实验室"
+link = "/lab"

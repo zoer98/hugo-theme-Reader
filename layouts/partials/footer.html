@@ -1,0 +1,27 @@
+<div class="site-footer">
+  <div>
+    © 2020-<span id="year"></span> ·
+    <a href="https://beian.miit.gov.cn/" target="_blank">
+      <span>{{ .Site.Params.beian }}</span>
+    </a>
+    · 网站运行: <span id="days">0</span> 天
+  </div>
+</div>
+<div class="canvas-wrap">
+  <canvas id="canvas"></canvas>
+</div>
+<div id="toTop">
+  Top!!
+</div>
+<script>
+  var s0 = '{{ .Site.Params.buildDate }}';
+  s1 = new Date(s0.replace(/-/g, "/"));
+  s2 = new Date();
+  var days = s2.getTime() - s1.getTime();
+  var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+  document.getElementById('days').innerHTML = number_of_days;
+
+  var date = new Date;
+  var year = date.getFullYear();
+  document.getElementById('year').innerHTML = year;
+</script>

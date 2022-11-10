@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="post {{ .Site.Language.LanguageName }}" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          {{ partial "header.html" . }}
+        </div>
+        <div class="post-box">
+          <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{ if in .Site.Params.mainSections .Type }}
+            <div class="row post-desc">
+              <div class="col-xs-6">
+                {{ if .Date }}
+                <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+                  {{ .Date.Format "02 Jan 2006" }}
+                </time>
+                {{ end }}
+              </div>
+              <div class="col-xs-6">
+                {{ if .Site.Author.name }}
+                <div class="post-author">
+                  <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </header>
+
+          <div class="post-content markdown-body">
+            {{ .Site.Params.postHeaderContent | safeHTML }}
+            {{ .Content }}
+          </div>
+
+          <div class="post-comments">
+            {{ partial "giscus.html" . }}
+          </div>
+        </div>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "scripts.html" . }}
+  {{ if .Site.Params.extraBody }}
+  {{ .Site.Params.extraBody | safeHTML }}
+  {{ end }}
+
+</body>
+
+</html>

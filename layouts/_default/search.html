@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="post {{ .Site.Language.LanguageName }}" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          {{ partial "header.html" . }}
+        </div>
+        <div class="post-box">
+          <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{ if in .Site.Params.mainSections .Type }}
+            <div class="row post-desc">
+              <div class="col-xs-6">
+                {{ if .Date }}
+                <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+                  {{ .Date.Format "02 Jan 2006" }}
+                </time>
+                {{ end }}
+              </div>
+              <div class="col-xs-6">
+                {{ if .Site.Author.name }}
+                <div class="post-author">
+                  <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+          </header>
+
+          <section class="resume-section">
+            <div class="my-auto">
+              <form action="{{ "search" | absURL }}">
+                <input autocomplete="off" id="search-query" name="s" />
+              </form>
+              <div id="search-results">
+                <h3>Matching pages</h3>
+              </div>
+            </div>
+          </section>
+          <script id="search-result-template" type="text/x-js-template">
+              <div class="search-list" id="search-list-${key}">
+                <a href="${link}">
+                  <h4>${title}</h4>
+                  <p class="summary">${snippet}</p>
+                  ${ isset tags }<p>Tags: ${tags}</p>${ end }
+                  ${ isset categories }<p>Categories: ${categories}</p>${ end }
+                </a>
+              </div>
+          </script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+          <script src="{{ "js/search.js" | absURL }}"></script>
+          <script>
+            $(function () {
+              $('#search-query').focus();
+            })
+          </script>
+          <!-- <link rel="stylesheet" href="{{ .Site.Params.staticPrefix }}{{ "_pagefind/pagefind-ui.css" | relURL }}">
+          <script src="{{ .Site.Params.staticPrefix }}{{ "_pagefind/pagefind-ui.js" | relURL }}"></script>
+          <div id="search"></div>
+          <script>
+          window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search" });
+          });
+          </script> -->
+
+        </div>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+
+  {{ partial "scripts.html" . }}
+  {{ if .Site.Params.extraBody }}
+  {{ .Site.Params.extraBody | safeHTML }}
+  {{ end }}
+
+</body>
+
+</html>

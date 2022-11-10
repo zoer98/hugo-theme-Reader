@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="posts">
+    <div class="row">
+      <div class="col-xs-12">
+        {{ partial "header.html" . }}
+
+        <div id="posts-list">
+          <!-- <section> -->
+          {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+          {{ $projects := where .Site.RegularPages "Section" "projects" }}
+          {{ $pages = .Paginate ($pages) }}
+          {{ $archivesPage := first 2 (where .Site.RegularPages "Layout" "eq" "archives") }}
+
+          {{ range $pages.Pages }}
+          <div class="posts-line">
+            <a href="{{ .RelPermalink }}">
+              <div class="posts-date">
+                <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</time>
+              </div>
+              <div class="posts-title">
+                {{ .Title }}
+              </div>
+            </a>
+          </div>
+          {{ end }}
+        </div>
+
+        <!-- pagination -->
+        {{ partial "pagination.html" . }}
+
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "scripts.html" . }}
+</body>
+
+</html>

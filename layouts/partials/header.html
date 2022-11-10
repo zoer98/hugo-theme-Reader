@@ -1,0 +1,22 @@
+{{ $curLanguageName := .Site.Language.LanguageName }}
+<div class="progress-bar"></div>
+<header>
+  <div class="header-title">
+    <a href="{{ .Site.LanguagePrefix }}/">{{ .Site.Params.title }}</a>
+  </div>
+  <div class="header-subtitle">{{ .Site.Params.Description }}</div>
+</header>
+<div class="row end-md center-xs header-items">
+  <div class="header-item">
+    <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+  <!-- 导航栏列表 -->
+  {{ range .Site.Params.socials }}
+  <div class="header-item">
+    <a href="{{ .link }}">{{ .name }}</a>
+  </div>
+  {{ end }}
+</div>
+
+<div class="header-line"></div>

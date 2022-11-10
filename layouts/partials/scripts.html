@@ -1,0 +1,14 @@
+<script src="https://cdn.zburu.com/list/jquery3.6.0.js"></script>
+{{ if and .Site.Params.lazyImage (not .IsHome) -}}
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/lazyload.min.js" | relURL }}"></script>
+<script>
+  var lazyImage = new LazyLoad({
+    container: document.getElementById('article')
+  });
+</script>
+{{ end }}
+
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/toc.js" | relURL }}"></script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/simplebox.min.js" | relURL }}"></script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/canvas.js" | relURL }}"></script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/main.js" | relURL }}"></script>

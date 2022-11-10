@@ -1,0 +1,24 @@
+name = "Reader"
+license = "MIT"
+licenselink = "https://github.com/zburu/hugo-theme-Reader/blob/main/LICENSE"
+description = "A simple, easy-to-read hugo theme with multiple features integrated."
+homepage = "https://github.com/zburu/hugo-theme-Reader"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive",
+  "simple",
+  "clean",
+  "personal"
+]
+features = ["blog"]
+min_version = "0.0.1"
+
+[params]
+staticPrefix = ""
+extraCSSFiles = []
+
+[author]
+  name = "zburu"
+  homepage = "https://zburu.com"
