@@ -25,7 +25,11 @@
 
 >本主题是在 [yinyang](https://github.com/joway/hugo-theme-yinyang) 的基础上进行二次开发，增加了新的功能以及删除多余的功能，目的是精简代码，提高网页可读性等。
 
-![](https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg)
+<details>
+<summary>截图展示</summary>
+<img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
+</details>
+<br>
  
 ## 目录
 

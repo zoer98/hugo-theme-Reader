@@ -19,13 +19,19 @@
 
 </p>
 
-![hugo-theme-Reader](https://count.zburu.com/get/?name=hugo-theme-Reader)
+<img src="https://count.zburu.com/get/?name=hugo-theme-Reader">
+
+<details>
+<summary>Screenshot display</summary>
+<img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
+</details>
+<br>
 
 This README.md is for theme users and developers, welcome to use and submit pr.
 
 > This theme is secondary development based on [yinyang](https://github.com/joway/hugo-theme-yinyang), adding new functions and deleting redundant functions, in order to simplify the code and improve Web page readability, etc.
 
-![](https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg)
+![]()
  
 ## Table of contents
 
