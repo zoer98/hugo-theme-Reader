@@ -78,6 +78,8 @@ eg:
 
 ### 配置 
 
+第三方评论使用 [giscus](https://giscus.app)，配置时请修改 `/layouts/partials/giscus.html` 文件。
+
 ```toml
 baseURL = "https://zburu.com"
 languageCode = "en-us"

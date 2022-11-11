@@ -80,6 +80,8 @@ eg:
 
 ### configure 
 
+Third-party comments use [giscus](https://giscus.app), please modify the `/layouts/partials/giscus.html` file when configuring.
+
 ```toml
 baseURL = "https://zburu.com"
 languageCode = "en-us"
