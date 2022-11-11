@@ -25,7 +25,6 @@
 <summary>Screenshot display</summary>
 <img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
 </details>
-<br>
 
 This README.md is for theme users and developers, welcome to use and submit pr.
 
@@ -33,17 +32,17 @@ This README.md is for theme users and developers, welcome to use and submit pr.
 
 ![]()
  
-## Table of contents
+### Table of contents
 
 - [Table of contents](#table-of-contents)
-  - [Getting started guide](#getting-started-guide)
-  - [file directory description](#file-directory-description)
-  - [configure](#configure)
-  - [Contributor](#contributor)
-    - [How to participate in this project](#how-to-participate-in-this-project)
-  - [author](#author)
-  - [Copyright statement](#copyright-statement)
-  - [refer to](#refer-to)
+- [Getting started guide](#getting-started-guide)
+- [file directory description](#file-directory-description)
+- [configure](#configure)
+- [Contributor](#contributor)
+  - [How to participate in this project](#how-to-participate-in-this-project)
+- [author](#author)
+- [Copyright statement](#copyright-statement)
+- [refer to](#refer-to)
 
 ### Getting started guide
 
