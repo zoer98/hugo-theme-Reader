@@ -26,10 +26,6 @@ name = "归档"
 link = "/posts"
 
 [[params.socials]]
-name = "周刊"
-link = "/weekly"
-
-[[params.socials]]
 name = "留言"
 link = "/message"
 
