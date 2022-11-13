@@ -25,6 +25,11 @@
 
 >本主题是在 [yinyang](https://github.com/joway/hugo-theme-yinyang) 的基础上进行二次开发，增加了新的功能以及删除多余的功能，目的是精简代码，提高网页可读性等。
 
+新增：
+- [x] 图片灯箱
+- [x] 文章目录
+- [x] 文章搜索 
+
 <details>
 <summary>截图展示</summary>
 <img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
@@ -78,8 +83,14 @@ eg:
 
 ### 配置 
 
-第三方评论使用 [giscus](https://giscus.app)，配置时请修改 `/layouts/partials/giscus.html` 文件。
+1. 第三方评论使用 [giscus](https://giscus.app)，配置时请修改 `/layouts/partials/giscus.html` 文件。
+   
+2. 引入 `iframe` 标签时，请使用下方格式。
+```html
+{{< iframe "https://www.bilibili.com/xxxxxxxxx" >}}
+```
 
+3. `config.toml` 完整配置文件
 ```toml
 baseURL = "https://zburu.com"
 languageCode = "en-us"
