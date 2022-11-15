@@ -10,7 +10,7 @@
     <a href="https://github.com/zburu/hugo-theme-Reader"><strong>Explore the documentation for this project »</strong></a>
     <br />
     <br />
-    <a href="https://hugo-theme-reader.vercel.app/" target="_blank">View Demo</a>
+    <a href="https://hugo-theme-reader.netlify.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/zburu/hugo-theme-Reader/issues">report bugs</a>
     ·
