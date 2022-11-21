@@ -19,17 +19,3 @@ $(window).on('scroll', function () {
     updateProgress(perc);
   });
 });
-
-
-$('#toTop').on('click', function () {
-  $("html, body").animate({ scrollTop: 0 }, { duration: 500, easing: "swing" });
-  return false;
-});
-$(window).bind('scroll', function () {
-  var len = $(this).scrollTop();
-  if (len >= 100) {
-    $('#toTop').fadeIn('1000');
-  } else {
-    $('#toTop').fadeOut('1000');
-  }
-});

@@ -9,7 +9,7 @@ paginate = 15
 
 [params]
   title = "子舒的博客"
-  Description = "七碗受至味，一壶得真趣，空持百千偈，不如吃茶去。"
+  description = "https://zburu.com/index.xml"
   favicon = "https://cdn.zburu.com/favicon.ico"
   buildDate = "2020-06-14"
   beian = "浙ICP备2022002453号-2"
@@ -24,6 +24,10 @@ paginate = 15
 [[params.socials]]
 name = "归档"
 link = "/posts"
+
+[[params.socials]]
+name = "周刊"
+link = "/weekly"
 
 [[params.socials]]
 name = "留言"

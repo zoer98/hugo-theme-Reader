@@ -1,4 +1,4 @@
-<script src="https://cdn.zburu.com/list/jquery3.6.0.js"></script>
+<script src="{{ .Site.Params.staticPrefix }}{{ "js/jquery3.6.0.min.js" | relURL }}"></script>
 {{ if and .Site.Params.lazyImage (not .IsHome) -}}
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/lazyload.min.js" | relURL }}"></script>
 <script>
@@ -12,3 +12,7 @@
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/simplebox.min.js" | relURL }}"></script>
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/canvas.js" | relURL }}"></script>
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/main.js" | relURL }}"></script>
+<!-- put this code snippet into your html file -->
+<script data-host-id="1" data-close-width="48" data-close-height="48" data-open-width="380" data-open-height="680" src="https://chat.zburu.com/widget.js" async></script>
+
+<!-- <iframe src="https://chat.zburu.com/widget.html?host=1" width="48" height="48" style="position: fixed; border-radius: 8px; right: 16px; bottom: 16px; border: none; z-index: 9999; box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;"></iframe> -->

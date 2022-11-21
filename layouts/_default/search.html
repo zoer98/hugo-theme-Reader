@@ -10,7 +10,7 @@
           {{ partial "header.html" . }}
         </div>
         <div class="post-box">
-          <header class="post-header">
+          <div class="post-header">
             <h1 class="post-title">{{ .Title }}</h1>
             {{ if in .Site.Params.mainSections .Type }}
             <div class="row post-desc">
@@ -30,7 +30,7 @@
               </div>
             </div>
             {{ end }}
-          </header>
+          </div>
 
           <section class="resume-section">
             <div class="my-auto">
@@ -52,22 +52,7 @@
                 </a>
               </div>
           </script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
-          <script src="{{ "js/search.js" | absURL }}"></script>
-          <script>
-            $(function () {
-              $('#search-query').focus();
-            })
-          </script>
-          <!-- <link rel="stylesheet" href="{{ .Site.Params.staticPrefix }}{{ "_pagefind/pagefind-ui.css" | relURL }}">
-          <script src="{{ .Site.Params.staticPrefix }}{{ "_pagefind/pagefind-ui.js" | relURL }}"></script>
-          <div id="search"></div>
-          <script>
-          window.addEventListener('DOMContentLoaded', (event) => {
-            new PagefindUI({ element: "#search" });
-          });
-          </script> -->
+
 
         </div>
         {{ partial "footer.html" . }}
@@ -80,7 +65,14 @@
   {{ if .Site.Params.extraBody }}
   {{ .Site.Params.extraBody | safeHTML }}
   {{ end }}
-
+  <script src="{{ .Site.Params.staticPrefix }}{{ "js/fuse.min.js" | relURL }}"></script>
+  <script src="{{ .Site.Params.staticPrefix }}{{ "js/jquery.mark.min.js" | relURL }}"></script>
+  <script src="{{ "js/search.js" | absURL }}"></script>
+  <script>
+    $(function () {
+      $('#search-query').focus();
+    })
+  </script>
 </body>
 
 </html>
