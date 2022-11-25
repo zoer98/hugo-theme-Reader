@@ -1,4 +1,4 @@
-<div class="site-footer">
+<div class="footer">
   <div>
     © 2020-<span id="year"></span> ·
     <a href="https://beian.miit.gov.cn/" target="_blank">
@@ -6,9 +6,26 @@
     </a>
     · 网站运行: <span id="days">0</span> 天
   </div>
-</div>
-<div class="canvas-wrap">
-  <canvas id="canvas"></canvas>
+  <div class="utool">
+    <div class="item setting">
+      <span>设置</span>
+      <div class="box">
+        <p>字体风格</p>
+        <ul id="ulid">
+          <li>霞鹜文楷</li>
+          <li>OPPOSans</li>
+        </ul>
+        <p>字体大小</p>
+        <ul id="ulfz">
+          <li>小一点</li>
+          <li>大一点</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item totop">
+      <span>top</span>
+    </div>
+  </div>
 </div>
 <script>
   var s0 = '{{ .Site.Params.buildDate }}';
