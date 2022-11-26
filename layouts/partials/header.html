@@ -6,7 +6,7 @@
   <div class="header-item">
     <div class="header-subtitle">{{ .Site.Params.description }}</div>
     <!-- 导航栏列表 -->
-    <ul>
+    <ul id="navi">
       {{ range .Site.Params.socials }}
       <li class="header-item">
         <a href="{{ .link }}">{{ .name }}</a>

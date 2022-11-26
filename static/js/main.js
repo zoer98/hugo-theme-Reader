@@ -18,7 +18,7 @@ $(".utool .item.setting span").click(function () {
 });
 
 const ulid = document.getElementById('ulid');
-const FontFamily = ['LXGWWenKaiLite', 'OPPOSans']
+const FontFamily = ['OPPOSans', 'LXGWWenKaiLite']
 const lis = ulid.getElementsByTagName("li");
 const bodyff = JSON.parse(localStorage.getItem("font-family"));
 
@@ -65,3 +65,16 @@ $('#ulfz li:nth-child(2)').click(function () {
   }
   localStorage.setItem("font-size", JSON.stringify(fontsize));
 })
+
+var nav = document.getElementById("navi");
+var links = nav.getElementsByTagName("li");
+var lilen = nav.getElementsByTagName("a");
+var currenturl = document.location.href;
+var last = 0;
+for (var i = 0; i < links.length; i++) {
+  var linkurl = lilen[i].getAttribute("href");
+  if (currenturl.indexOf(linkurl) != -1) {
+    last = i;
+  }
+}
+lilen[last].className = "active";

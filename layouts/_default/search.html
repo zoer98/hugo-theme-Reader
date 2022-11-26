@@ -3,46 +3,43 @@
 {{ partial "head.html" . }}
 
 <body>
-  <article class="post {{ .Site.Language.LanguageName }}" id="article">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="site-header">
-          {{ partial "header.html" . }}
-        </div>
-        <div class="post-box">
-          <div class="post-header">
-            <h1 class="post-title">{{ .Title }}</h1>
-            {{ if in .Site.Params.mainSections .Type }}
-            <div class="row post-desc">
-              <div class="col-xs-6">
-                {{ if .Date }}
-                <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
-                  {{ .Date.Format "02 Jan 2006" }}
-                </time>
-                {{ end }}
-              </div>
-              <div class="col-xs-6">
-                {{ if .Site.Author.name }}
-                <div class="post-author">
-                  <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
-                </div>
-                {{ end }}
-              </div>
+  {{ partial "header.html" . }}
+  <article class="post}">
+    <div>
+      <div class="post-box">
+        <div class="post-header">
+          <h1 class="post-title">{{ .Title }}</h1>
+          {{ if in .Site.Params.mainSections .Type }}
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              {{ if .Date }}
+              <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+                {{ .Date.Format "02 Jan 2006" }}
+              </time>
+              {{ end }}
             </div>
-            {{ end }}
+            <div class="col-xs-6">
+              {{ if .Site.Author.name }}
+              <div class="post-author">
+                <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
+              </div>
+              {{ end }}
+            </div>
           </div>
+          {{ end }}
+        </div>
 
-          <section class="resume-section markdown-body">
-            <div class="my-auto">
-              <form action="{{ "search" | absURL }}">
-                <input autocomplete="off" id="search-query" name="s" />
-              </form>
-              <div id="search-results">
-                <h3>Matching pages</h3>
-              </div>
+        <section class="resume-section markdown-body">
+          <div class="my-auto">
+            <form action="{{ " search" | absURL }}">
+              <input autocomplete="off" id="search-query" name="s" />
+            </form>
+            <div id="search-results">
+              <h3>Matching pages</h3>
             </div>
-          </section>
-          <script id="search-result-template" type="text/x-js-template">
+          </div>
+        </section>
+        <script id="search-result-template" type="text/x-js-template">
               <div class="search-list" id="search-list-${key}">
                 <a href="${link}">
                   <h4>${title}</h4>
@@ -54,9 +51,8 @@
           </script>
 
 
-        </div>
-        {{ partial "footer.html" . }}
       </div>
+      {{ partial "footer.html" . }}
     </div>
   </article>
 
@@ -67,7 +63,7 @@
   {{ end }}
   <script src="{{ .Site.Params.staticPrefix }}{{ "js/fuse.min.js" | relURL }}"></script>
   <script src="{{ .Site.Params.staticPrefix }}{{ "js/jquery.mark.min.js" | relURL }}"></script>
-  <script src="{{ "js/search.js" | absURL }}"></script>
+  <script src="{{ .Site.Params.staticPrefix }}{{ "js/search.js" | absURL }}"></script>
   <script>
     $(function () {
       $('#search-query').focus();
