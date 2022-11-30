@@ -1,79 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-{{ partial "head.html" . }}
-
-<body>
-  {{ partial "header.html" . }}
-  <article class="post {{ .Site.Language.LanguageName }}">
-    <div>
-      <div class="post-box">
-        <div class="post-header">
-          <h1 class="post-title">{{ .Title }}</h1>
-          {{ if in .Site.Params.mainSections .Type }}
-          <div class="row post-desc">
-            <div class="col-xs-6">
-              {{ if .Date }}
-              <time class="post-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
-                发布于 {{ .Date.Format "2006-01-02" }}
-              </time>
-              {{ end }}
-            </div>
-            <div class="col-xs-6">
-              {{ if .Site.Author.name }}
-              <div class="post-author">
-                <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
-              </div>
-              {{ end }}
-            </div>
+{{ partial "header.html" . }}
+<article class="post {{ .Site.Language.LanguageName }}">
+  <div class="post-box">
+    <div class="post-header">
+      <h1 class="post-title">{{ .Title }}</h1>
+      {{ if in .Site.Params.mainSections .Type }}
+      <div class="row post-desc">
+        <div class="col-xs-9 post-date">
+          {{ if .Date }}
+          <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
+            发布于 {{ .Date.Format "2006-01-02" }}
+          </time>
+          {{ end }}
+          浏览量: <span id="ArtalkPV">加载中...</span>
+          评论: <span id="ArtalkCount"></span>
+        </div>
+        <div class="col-xs-3">
+          {{ if .Site.Author.name }}
+          <div class="post-author">
+            <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
           </div>
           {{ end }}
         </div>
-        <div class="autoMenu" id="autoMenu" data-autoMenu></div>
-        <div class="post-content markdown-body">
-          {{ .Site.Params.postHeaderContent | safeHTML }}
-          {{ .Content }}
-        </div>
-
-        <div class="row middle-xs">
-          <div class="col-xs-12">
-            {{ range .Params.tags }}
-            <div class="post-tags">
-              <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
-                {{ . }}
-              </a>
-            </div>
-            {{ end }}
-          </div>
-        </div>
-        {{ if in .Site.Params.mainSections .Type }}
-        <div class="row">
-          <div class="col-xs-12">
-            {{ .Site.Params.postFooterContent | safeHTML }}
-          </div>
-        </div>
-
-        {{ partial "related.html" . }}
-
-        {{ if .Site.Params.postAds }}
-        <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
-        {{ end }}
       </div>
-      <!-- split -->
-      <div style="height:15px;"></div>
-      <div class="post-box">
-        <div class="post-comments">
-          {{ partial "giscus.html" . }}
-        </div>
-        {{ end }}
-      </div>
-      {{ partial "footer.html" . }}
+      {{ end }}
     </div>
-  </article>
+    <div class="post-content markdown-body">
+      {{ .Site.Params.postHeaderContent | safeHTML }}
+      {{ .Content }}
+    </div>
 
-  {{ partial "scripts.html" . }}
-  {{ if .Site.Params.extraBody }}
-  {{ .Site.Params.extraBody | safeHTML }}
-  {{ end }}
+    <div class="row middle-xs">
+      <div class="col-xs-12">
+        {{ range .Params.tags }}
+        <div class="post-tags">
+          <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
+            {{ . }}
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ if in .Site.Params.mainSections .Type }}
+    <div class="row">
+      <div class="col-xs-12">
+        {{ .Site.Params.postFooterContent | safeHTML }}
+      </div>
+    </div>
+
+    {{ partial "related.html" . }}
+
+    {{ if .Site.Params.postAds }}
+    <div class="post-ads">{{ .Site.Params.postAds | safeHTML }}</div>
+    {{ end }}
+  </div>
+  <!-- split -->
+  <div style="height:15px;"></div>
+  <div class="post-box">
+    <div class="post-comments">
+      {{ partial "artalk.html" . }}
+    </div>
+    {{ end }}
+  </div>
+  {{ partial "footer.html" . }}
+</article>
+
+{{ partial "scripts.html" . }}
+{{ if .Site.Params.extraBody }}
+{{ .Site.Params.extraBody | safeHTML }}
+{{ end }}
 
 </body>
 

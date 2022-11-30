@@ -1,17 +1,28 @@
-{{ $curLanguageName := .Site.Language.LanguageName }}
-<header>
-  <div class="header-title">
-    <a href="{{ .Site.LanguagePrefix }}/">{{ .Site.Params.title }}</a>
-  </div>
-  <div class="header-item">
-    <div class="header-subtitle">{{ .Site.Params.description }}</div>
-    <!-- 导航栏列表 -->
-    <ul id="navi">
-      {{ range .Site.Params.socials }}
-      <li class="header-item">
-        <a href="{{ .link }}">{{ .name }}</a>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+
+<body>
+  <header>
+    <div class="header-item padding">
+      <div class="header-title">
+        <a href="{{ .Site.LanguagePrefix }}/">{{ .Site.Params.title }}</a>
+        <div class="header-subtitle">{{ .Site.Params.description }}</div>
+      </div>
+    </div>
+    <div class="sticky">
+      <div class="header-item padding">
+        <!-- 导航栏列表 -->
+        <ul id="navi">
+          {{ range .Site.Params.socials }}
+          <li>
+            <a href="{{ .link }}">{{ .name }}</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="header-item">
+        <div class="autoMenu" id="autoMenu" data-autoMenu></div>
+      </div>
+    </div>
+  </header>
