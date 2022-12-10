@@ -1,6 +1,10 @@
 {{ partial "header.html" . }}
 <article class="posts">
   <div id="posts-list" class="markdown-body">
+    <div class="index-banner">
+      <img src="{{ .Site.Params.bannerImg }}" alt="banner">
+      <div>{{ .Site.Params.bannerText }}</div>
+    </div>
     <!-- <section> -->
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
     {{ $projects := where .Site.RegularPages "Section" "projects" }}

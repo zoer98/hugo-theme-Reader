@@ -29,11 +29,6 @@ Added:
 - [x] Picture Lightbox
 - [x] article directory
 - [x] Article Search
-
-<details>
-<summary>Screenshot display</summary>
-<img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
-</details>
  
 ### Table of contents
 
@@ -83,55 +78,13 @@ eg:
 
 ### configure 
 
-1. Third-party comments use [giscus](https://giscus.app), please modify the `/layouts/partials/giscus.html` file when configuring.
+1. Third-party comments use artalk.
 
 2. When introducing the `iframe` tag, please use the following format.
 
 3. `config.toml` complete configuration file
-```toml
-baseURL = "https://zburu.com"
-languageCode = "en-us"
-title = "zburu's blog"
-theme = "Reader"
-paginate = 15
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[params]
-  title = "zburu's blog"
-  Description = ""
-  favicon = "https://cdn.zburu.com/favicon.ico"
-  buildDate = "2020-06-14"
-  beian = ""
-
-[author]
-  name = "zburu"
-  homepage = "/"
-
-[permalinks]
-  posts = "/archives/:slug.html"
-
-[[params.socials]]
-name = "posts"
-link = "/posts"
-
-[[params.socials]]
-name = "message"
-link = "/message"
-
-[[params.socials]]
-name = "about"
-link = "/about"
-
-[[params.socials]]
-name = "search"
-link = "/search"
-
-[[params.socials]]
-name = "lab"
-link = "/lab"
-```
+[config.toml](./exampleSite/config.toml)
 
 
 ### Contributor

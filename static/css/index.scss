@@ -1,21 +1,20 @@
 :root {
-  --boxshadow: 0px 1px 3px 0px rgb(0 0 0 / 32%);
+  --boxshadow: 0px 1px 3px 0px rgb(0 0 0 / 0.2);
 }
 
 /* global */
 ::-webkit-scrollbar {
   width: 10px;
   height: 16px;
-  background-color: #fff;
+  background: #fff;
 }
 
 // 轨道
 ::-webkit-scrollbar-track {
-  // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   padding: 0 4px;
   border-radius: 10px;
   margin-right: 10px;
-  background-color: #f2f5f8;
+  background: #e8eaed;
 }
 
 // 滚轮
@@ -23,7 +22,7 @@
   border-radius: 10px;
   margin-right: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #555;
+  background: #969696;
 }
 
 a,
@@ -33,6 +32,10 @@ a:link,
 a:active,
 a:focus {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
 }
 
 table {
@@ -47,6 +50,13 @@ table td {
   padding: 5px 12px;
 }
 
+hr {
+  height: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #dcdcdc;
+}
+
 html {
   overflow-y: scroll;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -54,12 +64,8 @@ html {
 
 @font-face {
   font-family: "OPPOSans";
+  font-display: swap;
   src: url(../fonts/OPPOSans.subset.ttf);
-}
-
-@font-face {
-  font-family: "LXGWWenKaiLite";
-  src: url(../fonts/LXGWWenKaiLite-Regular.subset.ttf);
 }
 
 body {
@@ -67,7 +73,7 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
   padding: 0 5px !important;
-  background: #f2f5f8;
+  background: #e8eaed;
   display: flex;
   justify-content: space-between;
   max-width: 1000px;
@@ -116,7 +122,8 @@ a:hover {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #eee;
+    background: #fff;
+    box-shadow: 0 5px 5px 0 rgb(0 0 0 / 10%);
     transition: all 0.2s linear;
 
     span {
@@ -142,53 +149,23 @@ a:hover {
         z-index: 999;
       }
     }
+  }
+}
 
-    &.setting {
-      position: relative;
+.index-banner {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
 
-      .box {
-        position: absolute;
-        right: 50px;
-        bottom: 0;
-        width: 260px;
-        background: #fff;
-        border-radius: 4px;
-        box-shadow: 0 8px 32px rgb(0 0 0 / 20%);
-        padding: 10px;
-        display: none;
-        font-size: 16px;
+  img {
+    width: 100%;
+  }
 
-        p {
-          margin: 0;
-        }
-
-        ul {
-          list-style: none;
-          padding: 0;
-          display: inline-flex;
-          align-items: center;
-          border-radius: 6px;
-          overflow: hidden;
-
-          li {
-            background: #f3f3f3;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4px 10px;
-            cursor: pointer;
-
-            &:nth-child(1) {
-              border-right: 1px solid #eee;
-            }
-
-            &.active {
-              background: #dfdddd;
-            }
-          }
-        }
-      }
-    }
+  div {
+    margin-top: 5px;
+    color: #666;
+    font-size: 16px;
+    font-style: italic;
   }
 }
 
@@ -287,6 +264,7 @@ header {
   color: #666;
   margin-top: 10px;
   font-size: 16px;
+  padding: 0 15px;
 }
 
 .header-item {
@@ -299,11 +277,9 @@ header {
     font-size: 17px;
 
     li {
-      margin-bottom: 4px;
-
       a {
         display: block;
-        padding: 4px 15px;
+        padding: 6px 15px;
         text-decoration: none;
         transition: all 0.1s linear;
 
@@ -388,7 +364,6 @@ header {
 /* post */
 
 .post-content img {
-  max-width: 100%;
   display: block;
   margin-right: auto;
   margin-top: 12px;
@@ -443,6 +418,7 @@ header {
 
 .post-date {
   color: #666;
+  white-space: nowrap;
 
   time {
     margin-right: 10px;
@@ -455,11 +431,6 @@ header {
 
 .post-author {
   float: right;
-  font-weight: 600;
-}
-
-.page-content {
-  min-height: 60%;
 }
 
 .post-content p {
@@ -566,6 +537,9 @@ header {
   header {
     width: 100%;
     flex-direction: column;
+  }
+
+  header .sticky {
     position: static;
   }
 
@@ -584,11 +558,11 @@ header {
     margin-bottom: 15px;
     border-radius: 5px;
     padding: 0;
-    box-shadow: 0px 1px 3px 0px rgb(0 0 0 / 32%);
+    box-shadow: var(--boxshadow);
   }
 
   .pagination {
-    box-shadow: 0px 1px 3px 0px rgb(0 0 0 / 32%);
+    box-shadow: var(--boxshadow);
     background: #fff;
     border-radius: 5px;
     padding: 10px 5px;
@@ -663,8 +637,45 @@ header {
 // Artalk 评论
 .artalk {
   .atk-main-editor {
+    border: none;
+    border-radius: 0;
+
     .atk-header {
-      border-bottom: 1px solid var(--at-color-border);
+      border-bottom: none;
+      padding: 0;
+
+      input {
+        border: 1px solid #d8d8d8;
+        transition: all 0.1s linear;
+
+        &:focus {
+          border-color: #000;
+        }
+      }
+    }
+
+    .atk-textarea-wrap > .atk-textarea {
+      border: 1px solid #d8d8d8;
+      padding: 10px;
+      transition: all 0.1s linear;
+
+      &:focus {
+        border-color: #000;
+      }
+    }
+
+    .atk-editor-plug-emoticons > .atk-grp-switcher {
+      border-bottom: none;
+    }
+
+    .atk-plug-panel-wrap {
+      border: 1px solid var(--at-color-border);
+    }
+  }
+
+  .atk-list {
+    .atk-copyright {
+      display: none !important;
     }
   }
 }
@@ -673,8 +684,17 @@ header {
   width: 600px !important;
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .atk-sidebar-layer {
     width: 100% !important;
+  }
+
+  .artalk .atk-main-editor .atk-header {
+    flex-wrap: wrap;
+
+    input {
+      flex: none;
+      margin-bottom: 5px;
+    }
   }
 }

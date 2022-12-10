@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-<article class="post {{ .Site.Language.LanguageName }}">
+<article class="post">
   <div class="post-box">
     <div class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
@@ -11,14 +11,12 @@
             发布于 {{ .Date.Format "2006-01-02" }}
           </time>
           {{ end }}
-          浏览量: <span id="ArtalkPV">加载中...</span>
+          浏览: <span id="ArtalkPV">加载中...</span>
           评论: <span id="ArtalkCount"></span>
         </div>
         <div class="col-xs-3">
           {{ if .Site.Author.name }}
-          <div class="post-author">
-            <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
-          </div>
+          <div class="post-author">@{{ .Site.Author.name }}</div>
           {{ end }}
         </div>
       </div>

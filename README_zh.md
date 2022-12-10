@@ -29,11 +29,6 @@
 - [x] 图片灯箱
 - [x] 文章目录
 - [x] 文章搜索 
-
-<details>
-<summary>截图展示</summary>
-<img src="https://cdn.staticaly.com/gh/zburu/pic-cdn@main/20221110/image.1b5c792ko41s.jpg">
-</details>
  
 ### 目录
 
@@ -83,58 +78,17 @@ eg:
 
 ### 配置 
 
-1. 第三方评论使用 [giscus](https://giscus.app)，配置时请修改 `/layouts/partials/giscus.html` 文件。
+1. 第三方评论使用 artalk.
    
 2. 引入 `iframe` 标签时，请使用下方格式。
+
 ```html
 {{< iframe "https://www.bilibili.com/xxxxxxxxx" >}}
 ```
 
 3. `config.toml` 完整配置文件
-```toml
-baseURL = "https://zburu.com"
-languageCode = "en-us"
-title = "子舒的博客"
-theme = "Reader"
-paginate = 15
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[params]
-  title = "子舒的博客"
-  Description = "七碗受至味，一壶得真趣，空持百千偈，不如吃茶去。"
-  favicon = "https://cdn.zburu.com/favicon.ico"
-  buildDate = "2020-06-14"
-  beian = "浙ICP备2022002453号-2"
-
-[author]
-  name = "子舒"
-  homepage = "/"
-
-[permalinks]
-  posts = "/archives/:slug.html"
-
-[[params.socials]]
-name = "归档"
-link = "/posts"
-
-[[params.socials]]
-name = "留言"
-link = "/message"
-
-[[params.socials]]
-name = "关于"
-link = "/about"
-
-[[params.socials]]
-name = "搜索"
-link = "/search"
-
-[[params.socials]]
-name = "实验室"
-link = "/lab"
-```
+[config.toml](./exampleSite/config.toml)
 
 
 ### 贡献者

@@ -6,14 +6,19 @@
   <header>
     <div class="header-item padding">
       <div class="header-title">
-        <a href="{{ .Site.LanguagePrefix }}/">{{ .Site.Params.title }}</a>
-        <div class="header-subtitle">{{ .Site.Params.description }}</div>
+        <a href="/">{{ .Site.Params.title }}</a>
+      </div>
+      <div class="header-subtitle">
+        <a href="https://zburu.com/index.xml" target="_blank">https://zburu.com/index.xml</a>
       </div>
     </div>
     <div class="sticky">
       <div class="header-item padding">
         <!-- 导航栏列表 -->
         <ul id="navi">
+          <li>
+            <a href="/">首页</a>
+          </li>
           {{ range .Site.Params.socials }}
           <li>
             <a href="{{ .link }}">{{ .name }}</a>
