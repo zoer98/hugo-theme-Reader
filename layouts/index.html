@@ -1,10 +1,6 @@
 {{ partial "header.html" . }}
 <article class="posts">
-  <div id="posts-list" class="markdown-body">
-    <div class="index-banner">
-      <img src="{{ .Site.Params.bannerImg }}" alt="banner">
-      <div>{{ .Site.Params.bannerText }}</div>
-    </div>
+  <div id="posts-list">
     <!-- <section> -->
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
     {{ $projects := where .Site.RegularPages "Section" "projects" }}
@@ -13,25 +9,22 @@
 
     {{ range $pages.Pages }}
     <div class="posts-line">
-      <a href="{{ .RelPermalink }}">
-        <div class="posts-date">
-          <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</time>
-        </div>
-        <div class="posts-title">
-          {{ .Title }}
-        </div>
+      <a class="posts-title" href="{{ .RelPermalink }}">
+        <span>{{ .Title }}</span>
       </a>
+      <time class="posts-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">发布于 {{ .Date.Format "01-02, 2006年"}}</time>
+      <div class="posts-content">
+        {{  .Content | truncate 100 }}
+      </div>
+      <a class="read-more" href="{{ .RelPermalink }}">Read More</a>
     </div>
     {{ end }}
   </div>
 
   <!-- pagination -->
   {{ partial "pagination.html" . }}
-
   {{ partial "footer.html" . }}
 </article>
-
 {{ partial "scripts.html" . }}
 </body>
-
 </html>

@@ -4,16 +4,16 @@
 
 <body>
   <header>
-    <div class="header-item padding">
+    <div class="header-item">
       <div class="header-title">
         <a href="/">{{ .Site.Params.title }}</a>
       </div>
-      <div class="header-subtitle">
-        <a href="https://zburu.com/index.xml" target="_blank">https://zburu.com/index.xml</a>
-      </div>
+      <div class="header-subtitle">https://zburu.com/index.xml</div>
     </div>
+    <div class="menu-btn">菜单</div>
+    <div class="opacity"></div>
     <div class="sticky">
-      <div class="header-item padding">
+      <div class="header-item">
         <!-- 导航栏列表 -->
         <ul id="navi">
           <li>
@@ -25,9 +25,6 @@
           </li>
           {{ end }}
         </ul>
-      </div>
-      <div class="header-item">
-        <div class="autoMenu" id="autoMenu" data-autoMenu></div>
       </div>
     </div>
   </header>

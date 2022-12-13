@@ -1,8 +1,8 @@
  {{ partial "header.html" . }}
   <article class="posts">
     <div class="cate">
-      <div class="posts-line"><a href="/categories/技术/">技术</a></div>
-      <div class="posts-line"><a href="/categories/随笔/">随笔</a></div>
+      <a href="/categories/技术/">技术</a>
+      <a href="/categories/随笔/">随笔</a>
     </div>
     {{ if .Data.Term}}
     <h1 class="taxonomy-term">正在查看【{{.Data.Term}}】文章</h1>
@@ -13,15 +13,11 @@
         <h1 class="site-date-catalog">{{ .Key }}</h1>
 
         {{ range .Pages }}
-        <div class="posts-line">
-          <a href="{{ .RelPermalink }}">
-            <div class="posts-date">
-              <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02"}}</time>
-            </div>
-            <div class="posts-title">
-              {{ .Title }}
-            </div>
+        <div class="posts-list">
+          <a class="posts-title" href="{{ .RelPermalink }}">
+            <span>{{ .Title }}</span>
           </a>
+          <time class="posts-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format "01-02, 2006"}}</time>
         </div>
         {{ end }}
       </section>

@@ -1,4 +1,17 @@
 $(function () {
+
+  $('.menu-btn').click(function () {
+    $('header .sticky').css('transform', 'translateX(0)');
+    $('.opacity').show();
+    $('body').css('overflow', 'hidden');
+  })
+
+  $('.opacity').click(function () {
+    $('.opacity').hide();
+    $('header .sticky').css('transform', 'translateX(-100%)');
+    $('body').css('overflow', 'inherit');
+  })
+
   $('.post-content img').addClass('slb')
   $('.slb').simplebox({
     fadeSpeed: 100
@@ -12,8 +25,6 @@ $(function () {
       $('.totop').removeClass('is-active')
     }
   });
-
-
 
   $(document).ready(function () {
     if (window.location.pathname == "/") {
@@ -30,4 +41,5 @@ $(function () {
 
   // Artalk
   $('.atk-main-editor>.atk-bottom').after($('.atk-main-editor>.atk-plug-panel-wrap'))
+
 })

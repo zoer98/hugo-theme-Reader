@@ -4,8 +4,8 @@
     <div class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
       {{ if in .Site.Params.mainSections .Type }}
-      <div class="row post-desc">
-        <div class="col-xs-9 post-date">
+      <div class="post-desc">
+        <div class="post-date">
           {{ if .Date }}
           <time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">
             发布于 {{ .Date.Format "2006-01-02" }}
@@ -14,33 +14,28 @@
           浏览: <span id="ArtalkPV">加载中...</span>
           评论: <span id="ArtalkCount"></span>
         </div>
-        <div class="col-xs-3">
-          {{ if .Site.Author.name }}
-          <div class="post-author">@{{ .Site.Author.name }}</div>
-          {{ end }}
-        </div>
+        {{ if .Site.Author.name }}
+        <div class="post-author">@{{ .Site.Author.name }}</div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
     <div class="post-content markdown-body">
+      <div class="autoMenu" id="autoMenu" data-autoMenu></div>
       {{ .Site.Params.postHeaderContent | safeHTML }}
       {{ .Content }}
     </div>
 
-    <div class="row middle-xs">
-      <div class="col-xs-12">
-        {{ range .Params.tags }}
-        <div class="post-tags">
-          <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
-            {{ . }}
-          </a>
-        </div>
-        {{ end }}
-      </div>
+    {{ range .Params.tags }}
+    <div class="post-tags">
+      <a href="{{ site.LanguagePrefix }}/tags/{{ lower . | urlize }}/">
+        {{ . }}
+      </a>
     </div>
+    {{ end }}
     {{ if in .Site.Params.mainSections .Type }}
-    <div class="row">
-      <div class="col-xs-12">
+    <div>
+      <div>
         {{ .Site.Params.postFooterContent | safeHTML }}
       </div>
     </div>
@@ -52,7 +47,7 @@
     {{ end }}
   </div>
   <!-- split -->
-  <div style="height:15px;"></div>
+
   <div class="post-box">
     <div class="post-comments">
       {{ partial "artalk.html" . }}
