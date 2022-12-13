@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-<article class="posts">
+<article>
   <div id="posts-list">
     <!-- <section> -->
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
@@ -9,10 +9,10 @@
 
     {{ range $pages.Pages }}
     <div class="posts-line">
+      <time class="posts-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">发布于 {{ .Date.Format "2006年1月2日"}}</time>
       <a class="posts-title" href="{{ .RelPermalink }}">
         <span>{{ .Title }}</span>
       </a>
-      <time class="posts-date" datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">发布于 {{ .Date.Format "01-02, 2006年"}}</time>
       <div class="posts-content">
         {{  .Content | truncate 100 }}
       </div>

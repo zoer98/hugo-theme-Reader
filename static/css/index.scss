@@ -168,15 +168,21 @@ a:hover {
   }
 }
 
+.taxonomy-term {
+  color: #666;
+  padding-bottom: 20px;
+}
+
 .post-ads {
   margin: 50px 0;
 }
 
 h2 {
+  padding: 10px 0;
 }
 
 h3 {
-  padding: 20px 0 10px;
+  padding: 10px 0;
 }
 
 .markdown-body {
@@ -267,11 +273,22 @@ header {
 }
 
 .header-title {
-  a {
-    color: #333;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &:hover {
     text-decoration: none;
-    font-size: 1.6rem;
-    font-weight: 500;
+  }
+
+  img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -447,7 +464,7 @@ header {
 
 .posts-date {
   display: block;
-  margin-top: 6px;
+  margin-bottom: 6px;
   font-size: 1rem;
   color: #858b93;
 }
@@ -499,7 +516,7 @@ header {
   margin-bottom: 20px;
 
   .posts-date {
-    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

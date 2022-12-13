@@ -1,5 +1,5 @@
 {{ partial "header.html" . }}
-<article class="post">
+<article>
   <div class="post-box">
     <div class="post-header">
       <h1 class="post-title">{{ .Title }}</h1>
@@ -14,9 +14,6 @@
           浏览: <span id="ArtalkPV">加载中...</span>
           评论: <span id="ArtalkCount"></span>
         </div>
-        {{ if .Site.Author.name }}
-        <div class="post-author">@{{ .Site.Author.name }}</div>
-        {{ end }}
       </div>
       {{ end }}
     </div>
@@ -50,7 +47,7 @@
 
   <div class="post-box">
     <div class="post-comments">
-      {{ partial "artalk.html" . }}
+      {{ partial "comment.html" . }}
     </div>
     {{ end }}
   </div>

@@ -1,13 +1,4 @@
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/jquery3.6.0.min.js" | relURL }}"></script>
-{{ if and .Site.Params.lazyImage (not .IsHome) -}}
-<script src="{{ .Site.Params.staticPrefix }}{{ "js/lazyload.min.js" | relURL }}"></script>
-<script>
-  var lazyImage = new LazyLoad({
-    container: document.getElementById('article')
-  });
-</script>
-{{ end }}
-
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/toc.js" | relURL }}"></script>
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/simplebox.min.js" | relURL }}"></script>
 <script src="{{ .Site.Params.staticPrefix }}{{ "js/main.js" | relURL }}"></script>
